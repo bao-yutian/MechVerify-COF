@@ -1,0 +1,160 @@
+[
+  {
+    "id": "H-F01",
+    "paper_id": "H",
+    "system": "COF-1",
+    "property": "milling_completion_time_min",
+    "context": {
+      "method": "ball_milling",
+      "frequency_hz": 25
+    },
+    "value": 45,
+    "unit": "min",
+    "tolerance": 5,
+    "locator": "Results, kinetics discussion; Fig. 3a",
+    "evidence_note": "COF-1 ball milling at 25 Hz reached completion within approximately 45 min (ex situ IR analysis)."
+  },
+  {
+    "id": "H-F02",
+    "paper_id": "H",
+    "system": "COF-1",
+    "property": "frequency_effect_on_reaction",
+    "context": {
+      "method": "ball_milling",
+      "frequency_range_hz": "5-30",
+      "time_points_min": "10,45"
+    },
+    "value": "accelerated",
+    "unit": null,
+    "locator": "Results, milling-frequency discussion; Fig. 3b",
+    "evidence_note": "For COF-1 under the reported 5–30 Hz ball-milling comparison, increased frequency accelerated reaction progress."
+  },
+  {
+    "id": "H-F03",
+    "paper_id": "H",
+    "system": "COF-1",
+    "property": "frequency_effect_on_crystallinity",
+    "context": {
+      "method": "ball_milling",
+      "frequency_range_hz": "5-30"
+    },
+    "value": "no_significant_change",
+    "unit": null,
+    "locator": "Results, milling-frequency discussion; Figs. S11–S12",
+    "evidence_note": "The same milling-frequency comparison did not significantly affect COF-1 crystallinity."
+  },
+  {
+    "id": "H-F04",
+    "paper_id": "H",
+    "system": "COF-1",
+    "property": "fwhm_100_90min_deg",
+    "context": {
+      "method": "ball_milling",
+      "frequency_hz": 25,
+      "duration_min": 90
+    },
+    "value": 0.61,
+    "unit": "deg",
+    "tolerance": 0.02,
+    "locator": "Results, time-dependent PXRD; Fig. 3a, Table S3",
+    "evidence_note": "PXRD FWHM(100) was 0.61 degrees after 90 min of ball milling, consistent with reduced crystallinity."
+  },
+  {
+    "id": "B-F01",
+    "paper_id": "B",
+    "system": "DBrTP-TPB",
+    "property": "crystallinity_change_with_frequency",
+    "context": {
+      "method": "COP_to_COF",
+      "frequency_range_hz": "15-30"
+    },
+    "value": "increased",
+    "unit": null,
+    "locator": "Results, Fig. 1D",
+    "evidence_note": "Increasing milling frequency from 15 to 30 Hz improved crystallinity of DBrTP-TPB from its amorphous COP precursor."
+  },
+  {
+    "id": "B-F02",
+    "paper_id": "B",
+    "system": "DBrTP-TPB",
+    "property": "crystallinity_2h_vs_1h",
+    "context": {
+      "method": "COP_to_COF",
+      "duration_comparison_h": "2_vs_1"
+    },
+    "value": "lower_at_2h",
+    "unit": null,
+    "locator": "Results, Fig. 1E",
+    "evidence_note": "Crystallinity increased up to 1 hour of milling but decreased after prolonged milling for 2 hours."
+  },
+  {
+    "id": "B-F03",
+    "paper_id": "B",
+    "system": "TFPPy-PDA",
+    "property": "BET_surface_area",
+    "context": {
+      "method": "COP_to_COF"
+    },
+    "value": 850,
+    "unit": "m2/g",
+    "tolerance": 15,
+    "locator": "Results, Fig. 5B",
+    "evidence_note": "TFPPy-PDA obtained from amorphous-to-crystalline milling had BET surface area of approximately 850 m2/g."
+  },
+  {
+    "id": "B-F04",
+    "paper_id": "B",
+    "system": "TFPPy-PDA",
+    "property": "BET_surface_area",
+    "context": {
+      "method": "de_novo_mechanosynthesis"
+    },
+    "value": 150,
+    "unit": "m2/g",
+    "tolerance": 15,
+    "locator": "Results, Fig. 5B",
+    "evidence_note": "TFPPy-PDA from the tested de novo mechanosynthesis route had BET surface area of approximately 150 m2/g."
+  },
+  {
+    "id": "U-F01",
+    "paper_id": "U",
+    "system": "imine_model_reaction",
+    "property": "exchange_rate_relative_to_condensation",
+    "context": {
+      "method": "mechanochemical_model",
+      "measurement": "time_resolved_1H_NMR"
+    },
+    "value": "slower",
+    "unit": null,
+    "locator": "Publisher abstract",
+    "evidence_note": "In the reported time-resolved 1H NMR model reaction, imine exchange was slower than direct condensation."
+  },
+  {
+    "id": "U-F02",
+    "paper_id": "U",
+    "system": "reported_imine_COFs",
+    "property": "BET_area_comparison",
+    "context": {
+      "method": "exchange_vs_direct_condensation",
+      "scope": "reported_COFS"
+    },
+    "value": "higher_for_exchange",
+    "unit": null,
+    "locator": "Publisher abstract",
+    "evidence_note": "The reported imine-exchange COFs had surface areas 860–1380 m2/g versus 20–505 m2/g for the compared direct-condensation materials."
+  },
+  {
+    "id": "U-F03",
+    "paper_id": "U",
+    "system": "AIE_based_COF",
+    "property": "obtained_by_direct_condensation",
+    "context": {
+      "method": "mechanochemical_direct_condensation",
+      "scope": "tested_conditions"
+    },
+    "value": false,
+    "unit": null,
+    "locator": "Publisher abstract",
+    "evidence_note": "The reported AIE-based COF was obtained in 30 min by the exchange route but remained inaccessible by mechanochemical direct condensation under tested conditions."
+  }
+]
