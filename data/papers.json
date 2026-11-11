@@ -1,0 +1,23 @@
+[
+  {
+    "id": "H", "authors": "Hamzehpoor et al.", "year": 2024,
+    "title": "Mechanochemical Synthesis of Boroxine-linked Covalent Organic Frameworks",
+    "doi": "10.1002/anie.202404539",
+    "url": "https://doi.org/10.1002/anie.202404539",
+    "source_scope": "Publisher's open full text, Results/Fig. 3"
+  },
+  {
+    "id": "B", "authors": "Brown et al.", "year": 2026,
+    "title": "Amorphous-to-crystalline transformation: a mechanochemical pathway to imine-linked covalent organic frameworks",
+    "doi": "10.1039/D5MR00161G",
+    "url": "https://doi.org/10.1039/D5MR00161G",
+    "source_scope": "Publisher's HTML full text, Results/Figs. 1 and 5"
+  },
+  {
+    "id": "U", "authors": "Uddin et al.", "year": 2026,
+    "title": "A Mechanochemical Imine Exchange Route to 2D Imine-Linked Covalent Organic Frameworks",
+    "doi": "10.1021/acsmaterialslett.6c00282",
+    "url": "https://doi.org/10.1021/acsmaterialslett.6c00282",
+    "source_scope": "Publisher's abstract only; full paper/SI not yet independently checked"
+  }
+]
