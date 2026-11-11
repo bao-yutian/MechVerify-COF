@@ -1,0 +1,32 @@
+name: COF Pilot Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  cpu-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Run non-LLM baseline
+        run: python -m mechverify evaluate --strategy always-supported --output results/ci_always_supported.json
+      - name: Run structured sanity check (NOT AI accuracy)
+        run: python -m mechverify evaluate --strategy structured --output results/ci_structured_sanity.json
+      - name: Save pilot reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cof-cpu-pilot-reports
+          path: results/ci_*.json
+          if-no-files-found: ignore
