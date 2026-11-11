@@ -85,7 +85,7 @@ def run(args: argparse.Namespace) -> None:
 
     if not torch.cuda.is_available():
         print("WARNING: No CUDA GPU detected; local Qwen inference may be very slow.")
-    print(f"Loading model {args.model} ...")
+    print(f"Loading model {args.model} ...", flush=True)
     tokenizer = AutoTokenizer.from_pretrained(args.model)
     model = AutoModelForCausalLM.from_pretrained(
         args.model, dtype="auto", device_map="auto"
@@ -99,6 +99,10 @@ def run(args: argparse.Namespace) -> None:
     if not cases:
         raise SystemExit("No cases to evaluate")
 
+    # Save each completed judgment immediately. If Colab disconnects later,
+    # previous judgments will still be available in the output JSON file.
+    destination = Path(args.output)
+    destination.parent.mkdir(parents=True, exist_ok=True)
     rows = []
     for index, case in enumerate(cases, start=1):
         messages = build_messages(case, facts)
@@ -128,7 +132,25 @@ def run(args: argparse.Namespace) -> None:
             "raw_model_response": raw,
         }
         rows.append(row)
-        print(f"[{index}/{len(cases)}] {case['id']}: predicted={predicted}, expected={case['gold_label']}", flush=True)
+        checkpoint = {
+            "model": args.model,
+            "status": "in_progress",
+            "cases_completed": len(rows),
+            "cases_total": len(cases),
+            "predictions": rows,
+            "warning": "Partial results; not a final accuracy estimate.",
+        }
+        checkpoint_temp = destination.with_suffix(destination.suffix + ".tmp")
+        checkpoint_temp.write_text(
+            json.dumps(checkpoint, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8"
+        )
+        checkpoint_temp.replace(destination)
+        print(
+            f"[{index}/{len(cases)}] {case['id']}: predicted={predicted}, "
+            f"expected={case['gold_label']} (saved to {destination})",
+            flush=True,
+        )
 
     valid = [r for r in rows if r["predicted"] in LABELS]
     # Distinguish model response failures from the scientific INSUFFICIENT label.
@@ -152,9 +174,10 @@ def run(args: argparse.Namespace) -> None:
         "summary": summary,
         "predictions": rows,
     }
-    destination = Path(args.output)
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    destination.write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     print("\n" + json.dumps(summary, indent=2, ensure_ascii=False))
     print(f"Saved: {destination}")
 
