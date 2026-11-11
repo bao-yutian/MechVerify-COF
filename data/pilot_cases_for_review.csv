@@ -1,0 +1,17 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: pilot_cases_for_review.csv>index,id,paper_id,claim,gold_label,error_type,review_status,reviewer_notes
+0,H-01,H,"For COF-1 milled at 25 Hz in the reported experiment, completion occurred in approximately 45 minutes.",SUPPORTED,numerical,pilot_checked_against_main_text,
+1,H-02,H,"For COF-1 milled at 25 Hz in the reported experiment, completion occurred in approximately 5 minutes.",CONTRADICTED,numerical,pilot_checked_against_main_text,
+2,H-03,H,"In the authors' COF-1 ball-milling experiments spanning 5 to 30 Hz, increasing milling frequency accelerated reaction progress.",SUPPORTED,conditions,pilot_checked_against_main_text,
+3,H-04,H,"Across the reported 5 to 30 Hz ball-milling conditions for COF-1, increasing frequency significantly improved the crystallinity.",CONTRADICTED,conversion_vs_crystallinity,pilot_checked_against_main_text,
+4,H-05,H,"At a previously untested frequency of 50 Hz, COF-1 reaches full conversion in 20 minutes.",INSUFFICIENT,untested_conditions,pilot_checked_against_main_text,
+5,B-01,B,"For DBrTP-TPB formed by milling its amorphous polymer precursor, raising frequency from 15 to 30 Hz improved crystallinity.",SUPPORTED,conditions,pilot_checked_against_main_text,
+6,B-02,B,"For DBrTP-TPB formed by milling its amorphous polymer precursor, raising frequency from 15 to 30 Hz reduced crystallinity.",CONTRADICTED,trend_reversal,pilot_checked_against_main_text,
+7,B-03,B,"In the reported COP-to-COF conversion of DBrTP-TPB, crystallinity was lower after 2 hours of milling than after 1 hour.",SUPPORTED,time_dependence,pilot_checked_against_main_text,
+8,B-04,B,"For the tested TFPPy-PDA COP-to-COF milling route, the BET surface area was approximately 150 m2/g.",CONTRADICTED,method_mismatch,pilot_checked_against_main_text,
+9,B-05,B,Increasing the milling frequency from 30 Hz to 60 Hz would further improve the crystallinity of DBrTP-TPB.,INSUFFICIENT,untested_conditions,pilot_checked_against_main_text,
+10,U-01,U,"In the mechanochemical model study measured by time-resolved proton NMR, imine exchange proceeded more slowly than direct condensation.",SUPPORTED,kinetics,pilot_checked_against_abstract_only,
+11,U-02,U,"In the mechanochemical model study measured by time-resolved proton NMR, imine exchange proceeded faster than direct condensation.",CONTRADICTED,kinetics_reversal,pilot_checked_against_abstract_only,
+12,U-03,U,"For the reported COF products compared in the study, mechanochemical imine exchange produced higher BET surface areas than direct condensation.",SUPPORTED,route_comparison,pilot_checked_against_abstract_only,
+13,U-04,U,"Under the tested mechanochemical conditions, the AIE-based COF was successfully made by direct imine condensation.",CONTRADICTED,route_comparison,pilot_checked_against_abstract_only,
+14,U-05,U,"At a specific ball-milling frequency of 60 Hz, imine exchange yields higher BET surface areas than direct condensation for every imine COF.",INSUFFICIENT,universal_extrapolation,pilot_checked_against_abstract_only,
