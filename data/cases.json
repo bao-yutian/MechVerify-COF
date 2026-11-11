@@ -1,0 +1,273 @@
+[
+  {
+    "id": "H-01",
+    "paper_id": "H",
+    "claim": "For COF-1 milled at 25 Hz in the reported experiment, completion occurred in approximately 45 minutes.",
+    "structured_claim": {
+      "system": "COF-1",
+      "property": "milling_completion_time_min",
+      "context": {
+        "method": "ball_milling",
+        "frequency_hz": 25
+      },
+      "value": 45,
+      "unit": "min"
+    },
+    "gold_label": "SUPPORTED",
+    "error_type": "numerical",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "H-02",
+    "paper_id": "H",
+    "claim": "For COF-1 milled at 25 Hz in the reported experiment, completion occurred in approximately 5 minutes.",
+    "structured_claim": {
+      "system": "COF-1",
+      "property": "milling_completion_time_min",
+      "context": {
+        "method": "ball_milling",
+        "frequency_hz": 25
+      },
+      "value": 5,
+      "unit": "min"
+    },
+    "gold_label": "CONTRADICTED",
+    "error_type": "numerical",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "H-03",
+    "paper_id": "H",
+    "claim": "In the authors' COF-1 ball-milling experiments spanning 5 to 30 Hz, increasing milling frequency accelerated reaction progress.",
+    "structured_claim": {
+      "system": "COF-1",
+      "property": "frequency_effect_on_reaction",
+      "context": {
+        "method": "ball_milling",
+        "frequency_range_hz": "5-30",
+        "time_points_min": "10,45"
+      },
+      "value": "accelerated",
+      "unit": null
+    },
+    "gold_label": "SUPPORTED",
+    "error_type": "conditions",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "H-04",
+    "paper_id": "H",
+    "claim": "Across the reported 5 to 30 Hz ball-milling conditions for COF-1, increasing frequency significantly improved the crystallinity.",
+    "structured_claim": {
+      "system": "COF-1",
+      "property": "frequency_effect_on_crystallinity",
+      "context": {
+        "method": "ball_milling",
+        "frequency_range_hz": "5-30"
+      },
+      "value": "increased_significantly",
+      "unit": null
+    },
+    "gold_label": "CONTRADICTED",
+    "error_type": "conversion_vs_crystallinity",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "H-05",
+    "paper_id": "H",
+    "claim": "At a previously untested frequency of 50 Hz, COF-1 reaches full conversion in 20 minutes.",
+    "structured_claim": {
+      "system": "COF-1",
+      "property": "milling_completion_time_min",
+      "context": {
+        "method": "ball_milling",
+        "frequency_hz": 50
+      },
+      "value": 20,
+      "unit": "min"
+    },
+    "gold_label": "INSUFFICIENT",
+    "error_type": "untested_conditions",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "B-01",
+    "paper_id": "B",
+    "claim": "For DBrTP-TPB formed by milling its amorphous polymer precursor, raising frequency from 15 to 30 Hz improved crystallinity.",
+    "structured_claim": {
+      "system": "DBrTP-TPB",
+      "property": "crystallinity_change_with_frequency",
+      "context": {
+        "method": "COP_to_COF",
+        "frequency_range_hz": "15-30"
+      },
+      "value": "increased",
+      "unit": null
+    },
+    "gold_label": "SUPPORTED",
+    "error_type": "conditions",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "B-02",
+    "paper_id": "B",
+    "claim": "For DBrTP-TPB formed by milling its amorphous polymer precursor, raising frequency from 15 to 30 Hz reduced crystallinity.",
+    "structured_claim": {
+      "system": "DBrTP-TPB",
+      "property": "crystallinity_change_with_frequency",
+      "context": {
+        "method": "COP_to_COF",
+        "frequency_range_hz": "15-30"
+      },
+      "value": "decreased",
+      "unit": null
+    },
+    "gold_label": "CONTRADICTED",
+    "error_type": "trend_reversal",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "B-03",
+    "paper_id": "B",
+    "claim": "In the reported COP-to-COF conversion of DBrTP-TPB, crystallinity was lower after 2 hours of milling than after 1 hour.",
+    "structured_claim": {
+      "system": "DBrTP-TPB",
+      "property": "crystallinity_2h_vs_1h",
+      "context": {
+        "method": "COP_to_COF",
+        "duration_comparison_h": "2_vs_1"
+      },
+      "value": "lower_at_2h",
+      "unit": null
+    },
+    "gold_label": "SUPPORTED",
+    "error_type": "time_dependence",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "B-04",
+    "paper_id": "B",
+    "claim": "For the tested TFPPy-PDA COP-to-COF milling route, the BET surface area was approximately 150 m2/g.",
+    "structured_claim": {
+      "system": "TFPPy-PDA",
+      "property": "BET_surface_area",
+      "context": {
+        "method": "COP_to_COF"
+      },
+      "value": 150,
+      "unit": "m2/g"
+    },
+    "gold_label": "CONTRADICTED",
+    "error_type": "method_mismatch",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "B-05",
+    "paper_id": "B",
+    "claim": "Increasing the milling frequency from 30 Hz to 60 Hz would further improve the crystallinity of DBrTP-TPB.",
+    "structured_claim": {
+      "system": "DBrTP-TPB",
+      "property": "crystallinity_change_with_frequency",
+      "context": {
+        "method": "COP_to_COF",
+        "frequency_range_hz": "30-60"
+      },
+      "value": "increased",
+      "unit": null
+    },
+    "gold_label": "INSUFFICIENT",
+    "error_type": "untested_conditions",
+    "review_status": "pilot_checked_against_main_text"
+  },
+  {
+    "id": "U-01",
+    "paper_id": "U",
+    "claim": "In the mechanochemical model study measured by time-resolved proton NMR, imine exchange proceeded more slowly than direct condensation.",
+    "structured_claim": {
+      "system": "imine_model_reaction",
+      "property": "exchange_rate_relative_to_condensation",
+      "context": {
+        "method": "mechanochemical_model",
+        "measurement": "time_resolved_1H_NMR"
+      },
+      "value": "slower",
+      "unit": null
+    },
+    "gold_label": "SUPPORTED",
+    "error_type": "kinetics",
+    "review_status": "pilot_checked_against_abstract_only"
+  },
+  {
+    "id": "U-02",
+    "paper_id": "U",
+    "claim": "In the mechanochemical model study measured by time-resolved proton NMR, imine exchange proceeded faster than direct condensation.",
+    "structured_claim": {
+      "system": "imine_model_reaction",
+      "property": "exchange_rate_relative_to_condensation",
+      "context": {
+        "method": "mechanochemical_model",
+        "measurement": "time_resolved_1H_NMR"
+      },
+      "value": "faster",
+      "unit": null
+    },
+    "gold_label": "CONTRADICTED",
+    "error_type": "kinetics_reversal",
+    "review_status": "pilot_checked_against_abstract_only"
+  },
+  {
+    "id": "U-03",
+    "paper_id": "U",
+    "claim": "For the reported COF products compared in the study, mechanochemical imine exchange produced higher BET surface areas than direct condensation.",
+    "structured_claim": {
+      "system": "reported_imine_COFs",
+      "property": "BET_area_comparison",
+      "context": {
+        "method": "exchange_vs_direct_condensation",
+        "scope": "reported_COFS"
+      },
+      "value": "higher_for_exchange",
+      "unit": null
+    },
+    "gold_label": "SUPPORTED",
+    "error_type": "route_comparison",
+    "review_status": "pilot_checked_against_abstract_only"
+  },
+  {
+    "id": "U-04",
+    "paper_id": "U",
+    "claim": "Under the tested mechanochemical conditions, the AIE-based COF was successfully made by direct imine condensation.",
+    "structured_claim": {
+      "system": "AIE_based_COF",
+      "property": "obtained_by_direct_condensation",
+      "context": {
+        "method": "mechanochemical_direct_condensation",
+        "scope": "tested_conditions"
+      },
+      "value": true,
+      "unit": null
+    },
+    "gold_label": "CONTRADICTED",
+    "error_type": "route_comparison",
+    "review_status": "pilot_checked_against_abstract_only"
+  },
+  {
+    "id": "U-05",
+    "paper_id": "U",
+    "claim": "At a specific ball-milling frequency of 60 Hz, imine exchange yields higher BET surface areas than direct condensation for every imine COF.",
+    "structured_claim": {
+      "system": "reported_imine_COFs",
+      "property": "BET_area_comparison",
+      "context": {
+        "method": "exchange_vs_direct_condensation",
+        "scope": "all_imine_COFs",
+        "frequency_hz": 60
+      },
+      "value": "higher_for_exchange",
+      "unit": null
+    },
+    "gold_label": "INSUFFICIENT",
+    "error_type": "universal_extrapolation",
+    "review_status": "pilot_checked_against_abstract_only"
+  }
+]
