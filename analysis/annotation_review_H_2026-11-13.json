@@ -1,0 +1,36 @@
+{
+  "audit_date": "2026-11-13",
+  "scope": "First-paper main-text spot-check; NOT independent full-annotation review",
+  "paper_id": "H",
+  "primary_source": "https://doi.org/10.1002/anie.202404539",
+  "cases": [
+    {
+      "id": "H-02",
+      "current_gold_label": "CONTRADICTED",
+      "review_status": "NEEDS_FIGURE_OR_SI_VERIFICATION",
+      "reliable_text_observation": "Main text states that reaction completion was reached within approximately 45 minutes at 25 Hz.",
+      "logical_issue": "An upper-bound statement 'within 45 min' alone does not establish that completion at 5 min was impossible. Inspect Fig. 3a / Table S3 time-resolved conversion before confirming this gold label.",
+      "do_not_use_as_unambiguous_contradiction": true
+    },
+    {
+      "id": "H-04",
+      "current_gold_label": "CONTRADICTED",
+      "review_status": "MAIN_TEXT_CONFIRMED",
+      "reliable_text_observation": "Increasing milling frequency across the tested 5–30 Hz range accelerated reaction progress but did not significantly alter COF crystallinity.",
+      "source_locator": "Results, Fig. 3b; Figs. S11–S12, Table S4"
+    },
+    {
+      "id": "H-05",
+      "current_gold_label": "INSUFFICIENT",
+      "review_status": "MAIN_TEXT_SCOPE_CONFIRMED",
+      "reliable_text_observation": "The tested frequency comparison was 5–30 Hz; the provided evidence does not report full conversion within 20 min at 50 Hz.",
+      "source_locator": "Results, Fig. 3b; Table S4",
+      "note": "INSUFFICIENT means not established by supplied evidence; not proven false."
+    }
+  ],
+  "outstanding_work": [
+    "Inspect Fig. 3a and Table S3 numerical time-resolved conversion for H-02.",
+    "Review full text and supplementary information for other cases; the U cases currently use abstract only.",
+    "Seek independent expert review before freezing benchmark labels."
+  ]
+}
