@@ -36,6 +36,35 @@ python -m mechverify evaluate --strategy llm --output results/llm_baseline.json
 
 **Privacy:** this sends the claim text and curated evidence to your chosen third-party API. Use only public-source data and check your institution's requirements. Do not put keys in your Git repository. An API costs money depending on provider.
 
+## V4 experimental hybrid: Qwen extraction + Python evidence checking
+
+**Status:** code committed, but the new Qwen GPU experiment has not yet been run or verified.
+
+- Claim extractor: mechverify/v4_qwen.py calls local Hugging Face Qwen to parse ONLY the raw claim into a system, property, conditions, value and unit. No gold labels or manually structured claim fields are provided to the model.
+- Evidence checker: mechverify/v4_checker.py compares the extracted fields with curated source evidence, with explicit synthesis-route, frequency, material, property, scope, and unit matching.
+- Tests: tests/test_v4.py uses predetermined input extractions; passing these does NOT measure Qwen extraction quality.
+- Colab: notebooks/MechVerify_V4_Colab.ipynb saves partial model results to Google Drive.
+
+**Run in Colab:** [Open V4 notebook](https://colab.research.google.com/github/bao-yutian/MechVerify-COF/blob/main/notebooks/MechVerify_V4_Colab.ipynb). Choose a GPU runtime when available; run the notebook cells in order.
+
+**Run with Python already installed in cloned repository:**
+
+~~~bash
+python -m unittest discover -s tests -v
+python -m mechverify.v4_qwen --limit 3
+python -m mechverify.v4_qwen --output results/v4_qwen.json
+~~~
+
+**CPU-only replay after an extraction run:**
+
+~~~bash
+python -m mechverify.v4_qwen --replay results/v4_qwen.json --output results/v4_replay.json
+~~~
+
+The Qwen run requires transformers, accelerate and torch, downloads model weights into the Colab cloud VM, and does not require an API key. On each completed case it writes a checkpoint. A Colab runtime disconnect can still stop execution; the Drive-backed notebook preserves completed outputs.
+
+Only SUPPORTED, CONTRADICTED and INSUFFICIENT are scientific labels. EXTRACTION_ERROR and NOT_IMPLEMENTED represent technical coverage limits and are included in the overall denominator. This remains a 15-case development-set diagnostic. H-02 needs annotation review; U-paper evidence is abstract-only; a held-out paper-level experiment is still required.
+
 ## Why this matters
 
 Mechanical milling conditions do not map trivially to molecular forces; faster bond formation does not guarantee improved crystallinity. We test claims that confuse **reaction progress**, **crystallinity**, **route comparisons**, and **untested milling parameters**.
